@@ -4,10 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aaaa</title>
+    <title>CRAFT BOSS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="javascript" href="script.js">
 </head>
 <body>
-    <h1>aaaa</h1>
-    <p>vaads</p>
+    <header>
+        <a>参考文献自動生成ツール</a>
+    </header>
+    <h1>入力データ</h1>
+    <div id="input_box">
+        <div class="box">
+            <label>
+                <span class="name">サイト名</span>
+                <input>
+            </label>
+        </div>
+        <div class="box">
+            <label>
+                <span class="name">ページタイトル</span>
+                <input>
+            </label>
+        </div>
+        <div class="box">
+            <label>
+                <span class="name">URL</span>
+                <input>
+            </label>
+        </div>
+        <div class="box">
+            <label>
+                <span class="name">閲覧日
+                <!--あとで自動取得させるのつくる-->
+                <a id="res1"></a>
+                <script type="text/javascript">
+                    var ND,YY,MM,DD,outData;
+                    ND = new Date();
+                    YY =ND.getFullYear();
+                    MM =ND.getMonth() + 1;
+                    DD =ND.getDate();
+                    outData = YY + "年" + MM + "月" + DD + "日";
+                    var target = document.getElementById("res1");
+                    target.innerHTML = outData;
+                </script></span>
+            </label>
+        </div>
+        <button class="button_input">生成</button>
+    </div>
+    <br>
+    
+    <h1>Referrence Lists</h1>
+    <tr>
+        <div id="copy"></div>
+        <button class="button_push">コピー</button>
+        <button class="button_push">削除</button>
+    </tr>
+    <br>
+    <footer>@2022 CRAFT BOSS. All Right Reseved.</footer>
+
+    
 </body>
 </html>
