@@ -59,8 +59,14 @@
         var site = document.getElementById("site-name").value;               
         var page = document.getElementById("page-title").value;
         var url1 = document.getElementById("url").value;
-        var date1 = document.getElementById("date").value;
-        var result = site + "「" + page + "」" + url1 + "(" + date + ")";
+        var ND,YY,MM,DD,outData;
+                    ND = new Date();
+                    YY =ND.getFullYear();
+                    MM =ND.getMonth() + 1;
+                    DD =ND.getDate();
+                    outData = YY + "年" + MM + "月" + DD + "日閲覧.";
+                    
+        var result = site + "「" + page + "」" + url1 + " " + outData;
         
         document.getElementById("output").innerHTML = result;
         
@@ -69,12 +75,10 @@
 
     <h1>Referrence Lists</h1>
     <p id="output"></p>
-    <tr>
+
         
         <div id="copy"></div>
         <button class="button_push">コピー</button>
-        <button class="button_push">削除</button>
-    </tr>
     <br>
     <footer>@2022 CRAFT BOSS. All Right Reseved.</footer>
 
