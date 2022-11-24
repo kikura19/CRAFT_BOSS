@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRAFT BOSS</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style(1).css">
     <link rel="javascript" href="script.js">
 </head>
 <body>
@@ -17,36 +17,32 @@
         <div class="box">
             <label>
                 <span class="name">サイト名</span>
-                <input id="site-name" type="text">
+                <input id="site-name" type="text" required>
             </label>
         </div>
         <div class="box">
             <label>
                 <span class="name">ページタイトル</span>
-                <input id="page-title" type="text">
+                <input id="page-title" type="text" required>
             </label>
         </div>
         <div class="box">
             <label>
                 <span class="name">URL</span>
-                <input id="url" type="text">
+                <input id="url" type="text" required>
             </label>
         </div>
         <div class="box">
             <label>
-                <span class="name">閲覧日
-                <!--あとで自動取得させるのつくる-->
-                <a id="date"></a>
-                <script type="text/javascript">
-                    var ND,YY,MM,DD,outData;
-                    ND = new Date();
-                    YY =ND.getFullYear();
-                    MM =ND.getMonth() + 1;
-                    DD =ND.getDate();
-                    outData = YY + "年" + MM + "月" + DD + "日";
-                    var target = document.getElementById("date");
-                    target.innerHTML = outData;
-                </script></span>
+                <span class="name">閲覧日</span>
+                <input type="date" name="today" id="today">
+                <script>
+                    var date = new Date();
+                    var yyyy = date.getFullYear();
+                    var mm = ("0"+(date.getMonth()+1)).slice(-2);
+                    var dd = ("0"+date.getDate()).slice(-2);
+                    document.getElementById("today").value=yyyy+'-'+mm+'-'+dd;
+                </script>
             </label>
         </div>
         <input type="button" onclick="ButtonClick()" value="生成"
@@ -59,14 +55,8 @@
         var site = document.getElementById("site-name").value;               
         var page = document.getElementById("page-title").value;
         var url1 = document.getElementById("url").value;
-        var ND,YY,MM,DD,outData;
-                    ND = new Date();
-                    YY =ND.getFullYear();
-                    MM =ND.getMonth() + 1;
-                    DD =ND.getDate();
-                    outData = YY + "年" + MM + "月" + DD + "日閲覧.";
-                    
-        var result = site + "「" + page + "」" + url1 + " " + outData;
+        var date = document.getElementById("today").value;       
+        var result = site + "「" + page + "」" + url1 + " " + date + "閲覧.";
         
         document.getElementById("output").innerHTML = result;
         
