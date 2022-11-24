@@ -56,11 +56,11 @@
 
     <script>
     function ButtonClick() {
-        var value1 = document.getElementById("site-name");               
-        var value2 = document.getElementById("page-title");
-        var value3 = document.getElementById("url");
-        
-        var result = value1 + "「" + value2 + "」" + value3 + "(" + ")";
+        var site = document.getElementById("site-name").value;               
+        var page = document.getElementById("page-title").value;
+        var url1 = document.getElementById("url").value;
+        var date1 = document.getElementById("date").value;
+        var result = site + "「" + page + "」" + url1 + "(" + date + ")";
         
         document.getElementById("output").innerHTML = result;
         
