@@ -17,19 +17,19 @@
         <div class="box">
             <label>
                 <span class="name">サイト名</span>
-                <input id="site-name">
+                <input id="site-name" type="text">
             </label>
         </div>
         <div class="box">
             <label>
                 <span class="name">ページタイトル</span>
-                <input id="page-title">
+                <input id="page-title" type="text">
             </label>
         </div>
         <div class="box">
             <label>
                 <span class="name">URL</span>
-                <input id="url">
+                <input id="url" type="text">
             </label>
         </div>
         <div class="box">
@@ -54,9 +54,20 @@
     <br>
 
 
-    
+    <script>
+    function ButtonClick() {
+        var value1 = document.getElementById("site-name");               
+        var value2 = document.getElementById("page-title");
+        var value3 = document.getElementById("url");
+        
+        var result = value1 + "「" + value2 + "」" + value3 + "(" + ")";
+        var output = document.getElementById("output").innerHTML;
+        output.innerHTML = result;
+    }
+    </script>
+
     <h1>Referrence Lists</h1>
-    <output id="output" for="site-name page-title url date"></output>
+    <p id="output"></p>
     <tr>
         
         <div id="copy"></div>
