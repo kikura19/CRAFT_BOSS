@@ -49,7 +49,7 @@
                 </script></span>
             </label>
         </div>
-        <button class="button_input">生成</button>
+        <button class="button_input" onclick="ButtonClick()">生成</button>
     </div>
     <br>
 
@@ -61,13 +61,14 @@
         var value3 = document.getElementById("url");
         var value4 = document.getElementById("date");
         var result = value1 + "「" + vulue2 + "」" + value3 + "(" + value4 + ")";
-        var output1 = document.getElementById("output1");
+        var output1 = document.getElementById("output");
         output1.value = result;
       }
     </script>
     <h1>Referrence Lists</h1>
+    <output id="output" for="site-name page-title url"/>
     <tr>
-        <output id="output" for="site-name page-title url"/>
+        
         <div id="copy"></div>
         <button class="button_push">コピー</button>
         <button class="button_push">削除</button>
