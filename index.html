@@ -17,26 +17,26 @@
         <div class="box">
             <label>
                 <span class="name">サイト名</span>
-                <input>
+                <input id="site-name">
             </label>
         </div>
         <div class="box">
             <label>
                 <span class="name">ページタイトル</span>
-                <input>
+                <input id="page-title">
             </label>
         </div>
         <div class="box">
             <label>
                 <span class="name">URL</span>
-                <input>
+                <input id="url">
             </label>
         </div>
         <div class="box">
             <label>
                 <span class="name">閲覧日
                 <!--あとで自動取得させるのつくる-->
-                <a id="res1"></a>
+                <a id="date"></a>
                 <script type="text/javascript">
                     var ND,YY,MM,DD,outData;
                     ND = new Date();
@@ -44,7 +44,7 @@
                     MM =ND.getMonth() + 1;
                     DD =ND.getDate();
                     outData = YY + "年" + MM + "月" + DD + "日";
-                    var target = document.getElementById("res1");
+                    var target = document.getElementById("date");
                     target.innerHTML = outData;
                 </script></span>
             </label>
@@ -52,9 +52,22 @@
         <button class="button_input">生成</button>
     </div>
     <br>
-    
+
+
+    <script type="text/javascript">
+      function ButtonClick() {
+        var value1 = document.getElementById("site-name");               
+        var value2 = document.getElementById("page-title");
+        var value3 = document.getElementById("url");
+        var value4 = document.getElementById("date");
+        var result = value1 + "「" + vulue2 + "」" + value3 + "(" + value4 + ")";
+        var output1 = document.getElementById("output1");
+        output1.value = result;
+      }
+    </script>
     <h1>Referrence Lists</h1>
     <tr>
+        <output id="output" for="site-name page-title url"/>
         <div id="copy"></div>
         <button class="button_push">コピー</button>
         <button class="button_push">削除</button>
