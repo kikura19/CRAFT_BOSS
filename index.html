@@ -49,24 +49,14 @@
                 </script></span>
             </label>
         </div>
-        <button class="button_input" onclick="ButtonClick()">生成</button>
+        <input type="button" onclick="ButtonClick()" value="生成"
     </div>
     <br>
 
 
-    <script type="text/javascript">
-      function ButtonClick() {
-        var value1 = document.getElementById("site-name");               
-        var value2 = document.getElementById("page-title");
-        var value3 = document.getElementById("url");
-        var value4 = document.getElementById("date");
-        var result = value1 + "「" + vulue2 + "」" + value3 + "(" + value4 + ")";
-        var output1 = document.getElementById("output");
-        output1.value = result;
-      }
-    </script>
+    
     <h1>Referrence Lists</h1>
-    <output id="output" for="site-name page-title url"/>
+    <output id="output" for="site-name page-title url date"></output>
     <tr>
         
         <div id="copy"></div>
