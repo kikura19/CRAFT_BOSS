@@ -10,31 +10,32 @@
 </head>
 <body>
     <header>
+        <h1 class="site-title"><a href="index.html"><img src="logo_craft_boss.jpg" alt="CRAFT BOSS"></a></h1>
         <a>参考文献自動生成ツール</a>
     </header>
     <h1>入力データ</h1>
     <div id="input_box">
         <div class="box">
             <label>
-                <span class="name">サイト名</span>
+                <span class="name">サイト名</span></br>
                 <input id="site-name" type="text" required>
             </label>
         </div>
         <div class="box">
             <label>
-                <span class="name">ページタイトル</span>
+                <span class="name">ページタイトル</span></br>
                 <input id="page-title" type="text" required>
             </label>
         </div>
         <div class="box">
             <label>
-                <span class="name">URL</span>
+                <span class="name">URL</span></br>
                 <input id="url" type="text" required>
             </label>
         </div>
         <div class="box">
             <label>
-                <span class="name">閲覧日</span>
+                <span class="name">閲覧日</span></br>
                 <input type="number" name="year" id="year" min="2010" max="2100">
                 <a>年</a>
                 <input type="number" name="month" id="month" min="1" max="12">
@@ -52,7 +53,7 @@
                 </script>
             </label>
         </div>
-        <input type="button" onclick="ButtonClick()" value="作成する"
+        <input type="button" onclick="ButtonClick()" value="作成する" class="box">
     </div>
     <br>
 
