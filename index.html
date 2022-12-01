@@ -10,37 +10,39 @@
 </head>
 <body>
     <header>
-        <h1 class="site-title"><a href="index.html"><img src="logo_craft_boss.jpg" alt="CRAFT BOSS"></a></h1>
-        <a>参考文献自動生成ツール</a>
+        <a class="craftboss">CRAFT BOSS<a><br>
+        <a>-忙しい学生のための参考文献正しく書ける君-</a>
     </header>
     <h1>入力データ</h1>
-    <div id="input_box">
+    <div class="input_box">
+        
         <div class="box">
             <label>
                 <span class="name">サイト名</span></br>
-                <input id="site-name" type="text" required>
+                <input id="site-name" type="text" required class="input123">
             </label>
         </div>
         <div class="box">
             <label>
-                <span class="name">ページタイトル</span></br>
-                <input id="page-title" type="text" required>
-            </label>
+                <span class="name">記事名、ページタイトル</span></br>
+                <input id="page-title" type="text" required class="input123">
+            
         </div>
         <div class="box">
             <label>
                 <span class="name">URL</span></br>
-                <input id="url" type="text" required>
+                <input id="url" type="text"  required class="input123">
             </label>
+            
         </div>
         <div class="box">
             <label>
                 <span class="name">閲覧日</span></br>
-                <input type="number" name="year" id="year" min="2010" max="2100">
+                <input type="number" name="year" id="year" min="2010" max="2100" class="input_date">
                 <a>年</a>
-                <input type="number" name="month" id="month" min="1" max="12">
+                <input type="number" name="month" id="month" min="1" max="12" class="input_date">
                 <a>月</a>
-                <input type="number" name="day" id="day" min="1" max="31">
+                <input type="number" name="day" id="day" min="1" max="31" class="input_date">
                 <a>日</a>
                 <script>
                     var date = new Date();
@@ -53,7 +55,9 @@
                 </script>
             </label>
         </div>
-        <input type="button" onclick="ButtonClick()" value="作成する" class="box">
+    </br>
+        <input type="button" onclick="ButtonClick()" value="作成する" class="create">
+        <p id="invalid" style="color: red;"></p>
     </div>
     <br>
 
@@ -63,24 +67,69 @@
         var site = document.getElementById("site-name").value;               
         var page = document.getElementById("page-title").value;
         var url1 = document.getElementById("url").value;
+        if(site.length<1){
+            var validate = "未入力データがあります";
+            document.getElementById("invalid").innerHTML = validate; 
+            return false;  
+        }
+        if(page.length<1){
+            var validate = "未入力データがあります";
+            document.getElementById("invalid").innerHTML = validate; 
+            return false;  
+        }
+        if(url1.length<1){
+            var validate = "未入力データがあります";
+            document.getElementById("invalid").innerHTML = validate; 
+            return false;  
+        }
         var year = document.getElementById("year").value;
         var month = document.getElementById("month").value;
         var day = document.getElementById("day").value;       
         var result = site + "「" + page + "」" + url1 + " " + year + "年" + month + "月" + day + "日" + "閲覧.";
-        
         document.getElementById("output").innerHTML = result;
+        if(site.length>0, page.length>0, url1.length>0){
+            var validate = "";
+            document.getElementById("invalid").innerHTML = validate;
+           
+        }
         
     }
+    
     </script>
 
     <h1>Referrence Lists</h1>
-    <p id="output"></p>
+    <div class="button> 
+    
+    <p id="output" class="output"></p>
 
         
         <div id="copy"></div>
-        <button class="button_push">コピー</button>
+        <button onclick="textcopy()" class="button_push">コピー</button>
+    </div>
     <br>
-    <footer>@2022 CRAFT BOSS. All Right Reseved.</footer>
+    <script>
+        function textcopy() {
+            var text = document.getElementById("output").innerText;
+            var area = document.createElement("textarea");
+            area.textContent = text;
+            document.body.appendChild(area);
+            area.select();
+            if(text.length<1){
+                return false;
+            }else{document.execCommand("copy");
+            document.body.removeChild(area);}
+            
+   
+        }
+    </script>
+
+<script>
+  function textcopy() {
+    alert("正常にコピーされました。")
+  }
+</script>
+ 
+    <footer>@2022 CRAFT BOSS. All Right Reserved.</footer>
 
     
 </body>

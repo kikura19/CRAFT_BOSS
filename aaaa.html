@@ -5,21 +5,8 @@
   <title>sample1</title>
 </head>
 <body>
-  <form id="form1" action="#">
-    <input type="text" id="input-message">
-    <input type="button" onclick="showMessage()" value="送信">
-  </form>
-  <p id="output-message"></p>
-  <script language="javascript" type="text/javascript">
-    const showMessage = () => {
-      const textbox = document.getElementById("input-message");
-      const inputValue = textbox.value;
-
-      //テキストボックスの値を使って、出力するメッセージを生成する
-      const output = "入力された内容は「" + inputValue + "」です。";
-      //出力用のp要素にメッセージを表示
-      document.getElementById("output-message").innerHTML = output;
-    }
-  </script>
-</body>
+  <header>
+    <h1 class=site-title style="width: 120px; line-height: 1px; padding: 10px 0;"><a href="index.html"><img src="logo_craft_boss.jpg" alt="CRAFT BOSS" class="logo"></a></h1>
+  </header>
+  </body>
 </html>
