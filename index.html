@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRAFT BOSS</title>
-    <link rel="stylesheet" href="style(1).css">
+    <link rel="stylesheet" href="style.css">
     <link rel="javascript" href="script.js">
 </head>
 <body>
     <header>
-        <a class="craftboss">CRAFT BOSS<a><br>
+        <a class="craftboss" style="font-size:40px;">CRAFT BOSS<a><br>
         <a>-忙しい学生のための参考文献正しく書ける君-</a>
     </header>
     <h1>入力データ</h1>
@@ -71,13 +71,11 @@
             var validate = "未入力データがあります";
             document.getElementById("invalid").innerHTML = validate; 
             return false;  
-        }
-        if(page.length<1){
+        }if(page.length<1){
             var validate = "未入力データがあります";
             document.getElementById("invalid").innerHTML = validate; 
             return false;  
-        }
-        if(url1.length<1){
+        }if(url1.length<1){
             var validate = "未入力データがあります";
             document.getElementById("invalid").innerHTML = validate; 
             return false;  
@@ -98,7 +96,7 @@
     </script>
 
     <h1>Referrence Lists</h1>
-    <div class="button> 
+    <div class="button"> 
     
     <p id="output" class="output"></p>
 
@@ -117,17 +115,13 @@
             if(text.length<1){
                 return false;
             }else{document.execCommand("copy");
-            document.body.removeChild(area);}
-            
-   
+            document.body.removeChild(area);
+            alert("正常にコピーされました。")
+        }
         }
     </script>
 
-<script>
-  function textcopy() {
-    alert("正常にコピーされました。")
-  }
-</script>
+
  
     <footer>@2022 CRAFT BOSS. All Right Reserved.</footer>
 
