@@ -3,6 +3,11 @@ body {
 background-color: #5976A1;
 }
 
+@font-face {
+  font-family: Fredoka One;
+  src: url('FredokaOne-Regular.ttf') format("truetype");
+}
+
 header {
   position: relative;
   padding: 5px 5px 5px 42px;
